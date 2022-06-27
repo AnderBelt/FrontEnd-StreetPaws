@@ -5,21 +5,26 @@ import "./card.css";
 
 function Card({ imageSource, nameC, text, url }) {
   return (
-    <div className="card text-center bg-white animate__animated animate__fadeInUp">
-      <div className="overflow">
-        <img src={imageSource} alt="a wallpaper" className="card-img-top" />
-      </div>
-      <div className="card-body text-light">
+    <div className="card">
+      <div class="head">
+        <div class="circle"></div>
+        <div class="img">
+          <img src={imageSource} alt="" />
+        </div>
+        </div>
+        <div class="description">
         <h4 className="card-title">{nameC}</h4>
         <p className="card-text text-secondary">
           {text
-            ? text
-            : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam deserunt fuga accusantium excepturi quia, voluptates obcaecati nam in voluptas perferendis velit harum dignissimos quasi ex? Tempore repellat quo doloribus magnam."}
+            ? "Calificación: " + text
+            : "Sin calificación"}
         </p>
+        </div>
+        <div class="contact">
         <a
           href={url ? url : "#!"}
           target="_blank"
-          className="btn btn-outline-secondary border-0"
+          className="btn"
           rel="noreferrer"
         >
           Contactar con {nameC}
